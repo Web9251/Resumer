@@ -82,7 +82,7 @@ export const updatePasswordSchema = z
   })
   .refine((data) => data.newPassword === data.confirmPassword, {
     message: "Passwords does not match",
-    path: ["confirmPassword"], // error appears on confirmPassword field
+    path: ["confirmPassword"],
   })
 
 export type Resume = z.infer<typeof resumeSchema>

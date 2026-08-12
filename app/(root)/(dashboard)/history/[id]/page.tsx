@@ -2,8 +2,7 @@ import { getGenerationById } from "@/actions/generationActions"
 import Container from "@/components/global/Container"
 import CollapsibleJobDescription from "@/components/history/CollapsibleJobDescription"
 import Content from "@/components/history/Content"
-import Header from "@/components/history/Header"
-import { Card, CardContent, CardHeader } from "@/components/ui/card"
+import { Card, CardContent } from "@/components/ui/card"
 import { currentUser } from "@/hooks/currentUser"
 import { cn } from "@/lib/utils"
 import { pageSection } from "@/utils/styles"
@@ -25,7 +24,7 @@ async function Resume({ params }: Props) {
 
   const generation = await getGenerationById(id)
 
-  if (!generation) return notFound
+  if (!generation) return notFound()
 
   return (
     <section className={cn(pageSection)}>
