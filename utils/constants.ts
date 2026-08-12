@@ -127,8 +127,7 @@ Local Community Center | 2023–2024
 * Helped visitors and supported staff with daily tasks.
 `
 
-export const jobDescriptionDefaultValue = `I am seeking a Customer Service Assistant position where I can use my communication skills, help customers, and grow professionally while contributing to the team.
-`
+export const jobDescriptionDefaultValue = ""
 
 export const signInDefaultValues = {
   email: "",

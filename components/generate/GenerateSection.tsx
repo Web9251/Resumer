@@ -1,6 +1,5 @@
 "use client"
 
-import { getTotalGenerationsCount } from "@/actions/generationActions"
 import CoverLetter from "@/components/generate/CoverLetter"
 import GenerateForm from "@/components/generate/GenerateForm"
 import { Generation } from "@/generated/prisma/client"

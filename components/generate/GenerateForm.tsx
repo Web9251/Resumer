@@ -62,8 +62,8 @@ function GenerateForm({
     defaultValues: {
       resume: resume?.content ?? content,
       jobDescription: generation?.jobDescription ?? jobDescriptionDefaultValue,
-      jobTitle: generation?.jobTitle ?? "Customer service",
-      company: generation?.company ?? "JWT",
+      jobTitle: generation?.jobTitle ?? "",
+      company: generation?.company ?? "",
       resumeContent: "",
     },
   })
