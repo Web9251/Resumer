@@ -1,4 +1,4 @@
-import { FileSearchCorner, History } from "lucide-react"
+import { FileSearchCorner } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import {
@@ -10,6 +10,8 @@ import {
   EmptyTitle,
 } from "@/components/ui/empty"
 import Link from "next/link"
+import { cn } from "@/lib/utils"
+import { buttonTheme } from "@/utils/styles"
 
 function EmptyHistory() {
   return (
@@ -25,7 +27,7 @@ function EmptyHistory() {
         </EmptyDescription>
       </EmptyHeader>
       <EmptyContent className='flex-row justify-center gap-2'>
-        <Button asChild>
+        <Button className={cn(buttonTheme)} asChild>
           <Link href='/generate'>Generate</Link>
         </Button>
       </EmptyContent>
