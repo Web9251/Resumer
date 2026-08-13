@@ -1,5 +1,4 @@
 import SignInForm from "@/components/auth/SignInForm"
-import { currentUser } from "@/hooks/currentUser"
 import { cn } from "@/lib/utils"
 import { pageSection } from "@/utils/styles"
 
@@ -11,8 +10,6 @@ type Props = {
 
 async function SignInPage({ searchParams }: Props) {
   const callbackUrl = (await searchParams).callbackUrl
-
-  const user = await currentUser()
 
   return (
     <section

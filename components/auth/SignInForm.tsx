@@ -12,7 +12,7 @@ import { signInAction } from "@/actions/userActions"
 import { useState } from "react"
 import FormSuccess from "@/components/auth/FormSuccess"
 import FormError from "@/components/auth/FormError"
-import { useRouter, useSearchParams } from "next/navigation"
+import { useRouter } from "next/navigation"
 import { signInDefaultValues } from "@/utils/constants"
 
 function SignInForm({ callbackUrl }: { callbackUrl: string | undefined }) {

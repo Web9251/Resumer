@@ -8,7 +8,7 @@ import { sectionFlex, singlePageSections } from "@/utils/styles"
 
 function HowItWorks() {
   return (
-    <section className={cn(singlePageSections)}>
+    <section id='howItWorks' className={cn(singlePageSections)}>
       <Container>
         <div className={cn(sectionFlex, "items-center")}>
           <SectionHeader

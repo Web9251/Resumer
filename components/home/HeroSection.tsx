@@ -22,8 +22,12 @@ function Hero() {
           </p>
           <div className='flex gap-3'>
             <ButtonAnimatedBorderDemo />
-            <Button size='xlg' className={cn(buttonTheme, "capitalize ")}>
-              See how it works
+            <Button
+              size='xlg'
+              className={cn(buttonTheme, "capitalize")}
+              asChild
+            >
+              <a href='#howItWorks'>See how it works</a>
             </Button>
           </div>
         </div>
