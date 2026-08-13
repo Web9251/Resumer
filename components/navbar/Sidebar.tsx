@@ -74,7 +74,7 @@ function Sidebar({ user }: { user: User | undefined }) {
             asChild
           >
             <Link href='/sign-in'>
-              <LogOut />
+              <LogOut className='mr-2' />
               Sign Out
             </Link>
           </Button>

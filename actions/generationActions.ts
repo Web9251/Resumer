@@ -19,9 +19,11 @@ export const getAllGenerationsAction = async ({
 }) => {
   const GENERATIONS_PER_PAGE = 2
 
-  await getAuthUser()
+  const user = await getAuthUser()
 
   const conditions = []
+
+  conditions.push({ userId: user.id })
 
   if (search) {
     conditions.push({
