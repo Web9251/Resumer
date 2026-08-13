@@ -4,7 +4,7 @@ import { useMediaQuery } from "@/hooks/useMediaQuery"
 import { useEffect, useState } from "react"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Button } from "@/components/ui/button"
-import { LucideOctagon, Menu } from "lucide-react"
+import { LogOut, LucideOctagon, Menu } from "lucide-react"
 import { navLinks } from "@/utils/constants"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
@@ -70,9 +70,10 @@ function Sidebar({ user }: { user: User | undefined }) {
           <Button
             variant='destructive'
             onClick={handleSignOut}
-            className={cn("w-full mt-6", buttonTheme)}
+            className={cn("w-full mt-6 text-destructive")}
             asChild
           >
+            <LogOut />
             <Link href='/sign-in'>Sign Out</Link>
           </Button>
         ) : (
@@ -80,9 +81,6 @@ function Sidebar({ user }: { user: User | undefined }) {
             <Link href='/sign-in'>Sign In</Link>
           </Button>
         )}
-        <Button className={cn("w-full mt-6", buttonTheme)} asChild>
-          <Link href='/sign-in'>Sign In</Link>
-        </Button>
       </SheetContent>
     </Sheet>
   )
