@@ -19,13 +19,9 @@ export const auth = betterAuth({
     deleteUser: {
       enabled: true,
     },
-    // additionalFields: {
-    //   role: {
-    //     type: "string",
-    //     defaultValue: "user",
-    //   },
-    // },
   },
+
+  trustedOrigins: [process.env.NEXT_PUBLIC_APP_URL!],
 
   emailAndPassword: {
     enabled: true,
