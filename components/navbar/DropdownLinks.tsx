@@ -49,7 +49,7 @@ function DropdownLinks({ user }: { user: User }) {
       </DropdownMenuTrigger>
 
       <DropdownMenuContent
-        className='space-y-2 w-50'
+        className='space-y-2 w-50 hidden lg:block'
         align='end'
         sideOffset={10}
       >
