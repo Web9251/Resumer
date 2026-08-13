@@ -38,6 +38,7 @@ function GenerateSection({
       toast.error("Something went wrong, Please try again.")
     },
   })
+  const router = useRouter()
   const generateHandler = async (formData: FormFields) => {
     if (generationsCount > 2) {
       throw new Error(
@@ -47,6 +48,7 @@ function GenerateSection({
     if (!formData.resume.trim() || !formData.jobDescription.trim()) return
     setFormData(formData)
     await complete(JSON.stringify(""), { body: { ...formData, resumeId } })
+    router.refresh()
   }
 
   return (
