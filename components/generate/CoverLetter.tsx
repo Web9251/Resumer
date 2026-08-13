@@ -75,7 +75,7 @@ function CoverLetter({
           </div>
         )}
 
-        {generationsCount < 2 && !isLoading && completion ? (
+        {generationsCount < 2 && !isLoading && completion && (
           <Button
             className={cn(buttonTheme, "mt-6")}
             onClick={() => generateHandler(formData!)}
@@ -83,12 +83,6 @@ function CoverLetter({
             <RefreshCw />
             Regenerate
           </Button>
-        ) : (
-          (isLoading || completion) && (
-            <Button className={cn(buttonTheme, "mt-6")} disabled={isLoading}>
-              ...
-            </Button>
-          )
         )}
       </CardContent>
     </Card>
