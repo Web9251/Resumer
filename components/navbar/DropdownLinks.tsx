@@ -63,21 +63,7 @@ function DropdownLinks({ user }: { user: User }) {
             {user.email}
           </div>
         </DropdownMenuLabel>
-        {/* {navLinks.map((link) => {
-          if (user.role === "user" && link.label === "admin") return
-          const Icon = link.icon
-          return (
-            <DropdownMenuItem key={link.label}>
-              <Link
-                href={link.url}
-                className="capitalize flex justify-center items-center gap-3"
-              >
-                <Icon />
-                {link.label}
-              </Link>
-            </DropdownMenuItem>
-          )
-        })} */}
+
         <Separator />
         {dropDownLinksContent.map((item) => {
           const { label, Icon, link } = item
