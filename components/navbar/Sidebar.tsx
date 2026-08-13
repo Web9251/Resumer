@@ -73,8 +73,10 @@ function Sidebar({ user }: { user: User | undefined }) {
             className={cn("w-full mt-6 text-destructive")}
             asChild
           >
-            <LogOut />
-            <Link href='/sign-in'>Sign Out</Link>
+            <Link href='/sign-in'>
+              <LogOut />
+              Sign Out
+            </Link>
           </Button>
         ) : (
           <Button className={cn("w-full mt-6", buttonTheme)} asChild>
