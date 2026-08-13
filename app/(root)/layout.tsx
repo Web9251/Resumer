@@ -8,6 +8,7 @@ export default async function DashboardLayout({
   children: ReactNode
 }) {
   const user = await currentUser()
+  console.log("🚀 ~ DashboardLayout ~ user:", user)
   return (
     <>
       <Navbar user={user} />

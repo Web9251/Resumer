@@ -10,6 +10,8 @@ import Link from "next/link"
 import { cn } from "@/lib/utils"
 import { buttonTheme } from "@/utils/styles"
 import { User } from "better-auth"
+import { useRouter } from "next/navigation"
+import { authClient } from "@/lib/auth-client"
 
 function Sidebar({ user }: { user: User | undefined }) {
   const [open, setOpen] = useState(false)
@@ -20,6 +22,19 @@ function Sidebar({ user }: { user: User | undefined }) {
       setOpen(false)
     }
   }, [isDesktop])
+
+  const router = useRouter()
+  const handleSignOut = async () => {
+    await authClient.signOut({
+      fetchOptions: {
+        onSuccess: () => {
+          router.push("/")
+          router.refresh()
+        },
+      },
+    })
+  }
+
   return (
     <Sheet open={!isDesktop && open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
@@ -49,6 +64,21 @@ function Sidebar({ user }: { user: User | undefined }) {
               )
             })}
           </div>
+        )}
+
+        {user ? (
+          <Button
+            variant='destructive'
+            onClick={handleSignOut}
+            className={cn("w-full mt-6", buttonTheme)}
+            asChild
+          >
+            <Link href='/sign-in'>Sign Out</Link>
+          </Button>
+        ) : (
+          <Button className={cn("w-full mt-6", buttonTheme)} asChild>
+            <Link href='/sign-in'>Sign In</Link>
+          </Button>
         )}
         <Button className={cn("w-full mt-6", buttonTheme)} asChild>
           <Link href='/sign-in'>Sign In</Link>

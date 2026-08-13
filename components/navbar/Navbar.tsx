@@ -14,7 +14,6 @@ import {
   NavigationMenuList,
 } from "@/components/ui/navigation-menu"
 import { User } from "better-auth"
-import { Avatar } from "@/components/ui/avatar"
 import DropdownLinks from "@/components/navbar/DropdownLinks"
 
 function Navbar({ user }: { user: User | undefined }) {
