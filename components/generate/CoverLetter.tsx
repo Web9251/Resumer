@@ -75,7 +75,7 @@ function CoverLetter({
           </div>
         )}
 
-        {generationsCount < 3 && !isLoading && completion ? (
+        {generationsCount < 2 && !isLoading && completion ? (
           <Button
             className={cn(buttonTheme, "mt-6")}
             onClick={() => generateHandler(formData!)}

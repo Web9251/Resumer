@@ -10,6 +10,7 @@ import {
   ResumeSelected,
 } from "@/utils/types"
 import { useCompletion } from "@ai-sdk/react"
+import { useRouter } from "next/navigation"
 import { useState } from "react"
 import { toast } from "sonner"
 
@@ -37,7 +38,6 @@ function GenerateSection({
       toast.error("Something went wrong, Please try again.")
     },
   })
-
   const generateHandler = async (formData: FormFields) => {
     if (generationsCount > 2) {
       throw new Error(

@@ -4,6 +4,7 @@ import { getAuthUser, renderError } from "@/actions/utilsActions"
 import prisma from "@/lib/prisma"
 import { FormFields } from "@/utils/schemas"
 import { revalidatePath } from "next/cache"
+import { unstable_noStore as noStore } from "next/cache"
 
 export const getAllGenerationsAction = async ({
   search,
@@ -63,12 +64,12 @@ export const getAllGenerationsAction = async ({
 }
 
 export const getTotalGenerationsCount = async () => {
+  noStore()
   const user = await getAuthUser()
   return await prisma.generation.count({
     where: { userId: user.id },
   })
 }
-
 export const saveGenerationAction = async (
   formData: FormFields,
   resumeId: string,
