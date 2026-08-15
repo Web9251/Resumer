@@ -7,7 +7,6 @@ function SignInForm() {
     <CardWrapper
       headerTitle='Welcome to Resumer'
       headerSubText='Sign in to continue'
-      showSocial
     />
   )
 }
