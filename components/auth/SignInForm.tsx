@@ -2,11 +2,12 @@
 
 import CardWrapper from "@/components/auth/CardWrapper"
 
-function SignInForm() {
+function SignInForm({ callbackUrl }: { callbackUrl: string | undefined }) {
   return (
     <CardWrapper
       headerTitle='Welcome to Resumer'
       headerSubText='Sign in to continue'
+      callbackUrl={callbackUrl}
     />
   )
 }

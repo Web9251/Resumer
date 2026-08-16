@@ -5,15 +5,16 @@ import Social from "./Social"
 type Props = {
   headerTitle: string
   headerSubText: string
+  callbackUrl: string | undefined
 }
 
-function CardWrapper({ headerTitle, headerSubText }: Props) {
+function CardWrapper({ headerTitle, headerSubText, callbackUrl }: Props) {
   return (
     <Card className='dark:bg-transparent px-12 w-100 md:w-120 mb-6'>
       <CardHeader>
         <Header headerTitle={headerTitle} headerSubText={headerSubText} />
       </CardHeader>
-      <Social />
+      <Social callbackUrl={callbackUrl} />
     </Card>
   )
 }

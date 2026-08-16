@@ -5,18 +5,17 @@ import { Button } from "../ui/button"
 import { FaGithub } from "react-icons/fa6"
 import { authClient } from "@/lib/auth-client"
 
-function Social() {
+function Social({ callbackUrl }: { callbackUrl: string | undefined }) {
   const googleSignIn = async () => {
     await authClient.signIn.social({
       provider: "google",
-      callbackURL: "/",
+      callbackURL: callbackUrl,
     })
-    console.log("🚀 ~ googleSignIn ~ authClient:", "Google")
   }
   const githubSignIn = async () => {
     await authClient.signIn.social({
       provider: "github",
-      callbackURL: "/",
+      callbackURL: callbackUrl,
     })
   }
 
