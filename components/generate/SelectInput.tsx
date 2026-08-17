@@ -17,7 +17,6 @@ type Props<T extends FieldValues> = {
   disabled?: boolean
   selectValues: SelectValuesType
   hideLabel?: boolean
-  // setResumeId: Dispatch<SetStateAction<string>>
 }
 
 function SelectInput<T extends FieldValues>({
@@ -26,7 +25,6 @@ function SelectInput<T extends FieldValues>({
   control,
   selectValues,
   hideLabel = false,
-  // setResumeId,
 }: Props<T>) {
   return (
     <Controller
@@ -51,7 +49,6 @@ function SelectInput<T extends FieldValues>({
             value={field.value}
             onValueChange={(value) => {
               field.onChange(value)
-              // setResumeId(value)
             }}
           >
             <SelectTrigger

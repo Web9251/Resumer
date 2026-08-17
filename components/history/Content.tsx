@@ -35,7 +35,6 @@ function Content({ jobTitle, company, coverLetter, createdAt }: Props) {
           <CopyAndDownload text={coverLetter} />
         </div>
       </div>
-      {/* <pre className='whitespace-pre-wrap font-[inherit]'>{coverLetter}</pre> */}
       {coverLetter.split("\n\n").map((paragraph, index) => (
         <p key={index} className='text-sm leading-relaxed mb-4 last:mb-0'>
           {paragraph}

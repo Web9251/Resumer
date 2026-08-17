@@ -36,31 +36,6 @@ export const saveResumeSchema = z.object({
     .max(20, { message: "Resume name must be at most 20 characters" }),
 })
 
-export const signInSchema = z.object({
-  email: z.email({ message: "Email required" }),
-  password: z.string().min(1, { message: "Password required" }),
-})
-
-export const signUpSchema = z
-  .object({
-    name: z
-      .string()
-      .min(2, { message: "At least 2 characters required" })
-      .max(100, { message: "name must be at most 100 characters" }),
-
-    email: z.email({ message: "Email required" }),
-    password: z
-      .string()
-      .min(8, { message: "Password must be at least 8 characters long" }),
-    confirmPassword: z
-      .string()
-      .min(8, { message: "Password must be at least 8 characters long" }),
-  })
-  .refine((data) => data.password === data.confirmPassword, {
-    message: "Passwords does not match",
-    path: ["confirmPassword"], // error appears on confirmPassword field
-  })
-
 export const updateNameSchema = z.object({
   name: z
     .string()
@@ -88,7 +63,5 @@ export const updatePasswordSchema = z
 export type Resume = z.infer<typeof resumeSchema>
 export type FormFields = z.infer<typeof formSchema>
 export type ResumeNameField = z.infer<typeof saveResumeSchema>
-export type signInFields = z.infer<typeof signInSchema>
-export type signUpFields = z.infer<typeof signUpSchema>
 export type UpdateNameField = z.infer<typeof updateNameSchema>
 export type UpdatePasswordField = z.infer<typeof updatePasswordSchema>

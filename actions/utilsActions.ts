@@ -32,14 +32,6 @@ export const renderErrorWithRedirect = async (error: unknown) => {
   return { success: false, message: errorMessage, redirectTo: null }
 }
 
-export const getAdminUser = async () => {
-  const user = await currentUser()
-  // if (user?.role !== "admin") {
-  //   throw new UnauthorizedError()
-  // }
-  return user
-}
-
 export const getAuthUser = async () => {
   const user = await currentUser()
   if (!user) {

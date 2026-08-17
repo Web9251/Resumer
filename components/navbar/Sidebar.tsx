@@ -43,7 +43,6 @@ function Sidebar({ user }: { user: User | undefined }) {
         </Button>
       </SheetTrigger>
       <SheetContent className='px-6 pt-5'>
-        {/* Logo */}
         <div className='flex items-center gap-2 '>
           <LucideOctagon />
           <span className='text-xl font-medium tracking-tighter'>RESUMER</span>

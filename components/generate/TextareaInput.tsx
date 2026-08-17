@@ -1,5 +1,5 @@
 import { Control, Controller, FieldPath, FieldValues } from "react-hook-form"
-import { Field, FieldError, FieldLabel } from "../ui/field"
+import { Field, FieldError } from "../ui/field"
 import { Textarea } from "../ui/textarea"
 import { cn } from "@/lib/utils"
 
@@ -13,10 +13,8 @@ type Props<T extends FieldValues> = {
 
 function TextareaInput<T extends FieldValues>({
   name,
-  label,
   placeholder,
   control,
-  className,
 }: Props<T>) {
   return (
     <Controller

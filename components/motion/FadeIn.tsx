@@ -16,10 +16,6 @@ interface FadeInHorizontalProps {
   x?: number
 }
 
-// Wrap any section:
-// ...
-
-// Fires once when ~15% scrolled into view, never replays.
 export function FadeInVertical({
   children,
   className,

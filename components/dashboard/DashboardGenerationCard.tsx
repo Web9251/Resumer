@@ -1,4 +1,3 @@
-import { getRecentGenerationsAction } from "@/actions/generationActions"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Generation } from "@/generated/prisma/client"
 import { formatDistanceToNow } from "date-fns"

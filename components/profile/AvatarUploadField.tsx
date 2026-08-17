@@ -99,7 +99,6 @@ export function AvatarUploadField<TFieldValues extends FieldValues>({
   return (
     <div className='grid gap-2'>
       <div className='flex items-center gap-4'>
-        {/* Avatar */}
         <div className='relative'>
           <button
             type='button'
@@ -140,7 +139,6 @@ export function AvatarUploadField<TFieldValues extends FieldValues>({
           />
         </div>
 
-        {/* Change & Remove avatar */}
         <div className='flex flex-col items-start gap-1 text-sm'>
           <button
             type='button'

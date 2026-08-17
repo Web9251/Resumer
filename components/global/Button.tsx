@@ -1,7 +1,5 @@
 import { Button as ButtonUi } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
-import { buttonTheme } from "@/utils/styles"
-import { ReactNode } from "react"
 
 interface Props extends React.ComponentProps<"button"> {
   className?: string
@@ -26,7 +24,6 @@ interface Props extends React.ComponentProps<"button"> {
     | null
     | undefined
   asChild?: boolean
-  // children: ReactNode
 }
 
 export const Button = ({
@@ -34,7 +31,6 @@ export const Button = ({
   size,
   variant,
   asChild,
-  // children,
   ...props
 }: Props) => {
   return (

@@ -96,51 +96,6 @@ ${formData.resume}
 Write the cover letter now:`
 }
 
-export const resumeDefaultValue = `# John Doe
-
-**Email:** [john.doe@email.com](mailto:john.doe@email.com)
-**Phone:** (123) 456-7890
-
-## Summary
-
-Motivated and reliable individual with strong communication and problem-solving skills. Eager to learn and contribute to a team.
-
-## Education
-
-**High School Diploma**
-ABC High School | 2024
-
-## Skills
-
-* Communication
-* Teamwork
-* Time Management
-* Microsoft Office
-* Fast Learner
-
-## Experience
-
-**Volunteer**
-Local Community Center | 2023–2024
-
-* Assisted with organizing community events.
-* Helped visitors and supported staff with daily tasks.
-`
-
-export const jobDescriptionDefaultValue = ""
-
-export const signInDefaultValues = {
-  email: "",
-  password: "",
-}
-
-export const signUpDefaultValues = {
-  name: "",
-  email: "",
-  password: "",
-  confirmPassword: "",
-}
-
 export const sortHistory = [{ value: "newest" }, { value: "oldest" }]
 
 export const dropDownLinksContent = [

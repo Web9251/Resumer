@@ -6,7 +6,6 @@ import { Dispatch, SetStateAction, useRef, useTransition } from "react"
 
 type Props = {
   setHasMore: Dispatch<SetStateAction<boolean>>
-  // setGenerations: Dispatch<SetStateAction<(GenerationsResult)>>
   setGenerations: Dispatch<
     SetStateAction<
       ({

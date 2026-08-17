@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/dialog"
 import { ResumeNameField, saveResumeSchema } from "@/utils/schemas"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { SubmitEvent, useState, useTransition } from "react"
+import { useState, useTransition } from "react"
 import { useForm } from "react-hook-form"
 import { toast } from "sonner"
 
@@ -44,7 +44,6 @@ function SaveResume({ content, isUpdating }: Props) {
         return
       } else {
         toast.error(result.message)
-        // throw new Error(result.message)
       }
     })
   }

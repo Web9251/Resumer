@@ -1,9 +1,4 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-} from "@/components/ui/card"
+import { Card, CardDescription, CardHeader } from "@/components/ui/card"
 import { cn } from "@/lib/utils"
 
 function StatsCard({ count, text }: { count: number; text: string }) {

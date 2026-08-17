@@ -22,13 +22,10 @@ function Navbar({ user }: { user: User | undefined }) {
       <Container className='py-5'>
         <nav className=''>
           <div className='flex justify-between items-center'>
-            {/* Logo */}
             <Link href='/' className='flex justify-center items-center gap-2'>
               <LucideOctagon />
               <span className='text-xl font-semibold font-serif'>RESUMER</span>
             </Link>
-
-            {/* Center */}
 
             {user && (
               <NavigationMenu className='hidden lg:flex'>
@@ -50,8 +47,6 @@ function Navbar({ user }: { user: User | undefined }) {
               </NavigationMenu>
             )}
 
-            {/* Left side lg */}
-
             <div className='hidden lg:flex md:space-x-6'>
               <div className='flex items-center gap-3'>
                 <ModeToggle />
@@ -69,8 +64,6 @@ function Navbar({ user }: { user: User | undefined }) {
                 )}
               </div>
             </div>
-
-            {/* left side sm */}
 
             <div className='lg:hidden flex justify-center items-center gap-3'>
               <ModeToggle />

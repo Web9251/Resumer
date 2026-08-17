@@ -3,7 +3,6 @@
 import SelectInput from "@/components/generate/SelectInput"
 import TextInput from "@/components/generate/TextInput"
 import NoHistoryResult from "@/components/history/NoHistoryResult"
-import { Generation } from "@/generated/prisma/client"
 import { sortHistory } from "@/utils/constants"
 import { GenerationsResult, SelectValuesType } from "@/utils/types"
 import { useRouter, useSearchParams } from "next/navigation"

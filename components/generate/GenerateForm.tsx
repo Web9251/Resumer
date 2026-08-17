@@ -11,7 +11,6 @@ import { buttonTheme } from "@/utils/styles"
 import { Sparkles } from "lucide-react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { jobDescriptionDefaultValue } from "@/utils/constants"
 import { FaStop } from "react-icons/fa6"
 import {
   Dispatch,
@@ -56,12 +55,11 @@ function GenerateForm({
 }: Props) {
   const [content, setContent] = useState("")
 
-  // use form
   const { watch, handleSubmit, control, setValue } = useForm<FormFields>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       resume: resume?.content ?? content,
-      jobDescription: generation?.jobDescription ?? jobDescriptionDefaultValue,
+      jobDescription: generation?.jobDescription ?? "",
       jobTitle: generation?.jobTitle ?? "",
       company: generation?.company ?? "",
       resumeContent: "",
@@ -141,7 +139,6 @@ function GenerateForm({
         </CardContent>
       </Card>
 
-      {/* Description */}
       <Card className='bg-background'>
         <CardHeader className='p-0'>
           <div className='flex justify-between items-center px-6'>

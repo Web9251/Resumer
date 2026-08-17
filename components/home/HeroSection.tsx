@@ -1,4 +1,4 @@
-import ButtonAnimatedBorderDemo from "@/components/global/AnimatedBorderButton"
+import ButtonAnimatedBorder from "@/components/global/AnimatedBorderButton"
 import Container from "@/components/global/Container"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -21,7 +21,7 @@ function Hero() {
             professional cover letter instantly — no templates, no fluff.
           </p>
           <div className='flex gap-3'>
-            <ButtonAnimatedBorderDemo />
+            <ButtonAnimatedBorder />
             <Button
               size='xlg'
               className={cn(buttonTheme, "capitalize")}

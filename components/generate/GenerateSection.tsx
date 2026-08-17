@@ -4,11 +4,7 @@ import CoverLetter from "@/components/generate/CoverLetter"
 import GenerateForm from "@/components/generate/GenerateForm"
 import { Generation } from "@/generated/prisma/client"
 import { FormFields } from "@/utils/schemas"
-import {
-  GenerationSelected,
-  ResumeContent,
-  ResumeSelected,
-} from "@/utils/types"
+import { ResumeContent, ResumeSelected } from "@/utils/types"
 import { useCompletion } from "@ai-sdk/react"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
@@ -30,7 +26,7 @@ function GenerateSection({
   const [formData, setFormData] = useState<FormFields>()
   const [resumeId, setResumeId] = useState("")
 
-  const { completion, complete, isLoading, stop, error } = useCompletion({
+  const { completion, complete, isLoading, stop } = useCompletion({
     api: "/api/cover-letter",
     streamProtocol: "text",
     onError: (err) => {
