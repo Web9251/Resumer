@@ -128,6 +128,7 @@ function GenerateForm({
                 variant='outline'
                 disabled={isUpdating}
                 onClick={updateHandler}
+                type='button'
               >
                 {isUpdating ? "Updating..." : "Update current"}
               </Button>
@@ -175,7 +176,15 @@ function GenerateForm({
 
       <div className='fixed bottom-0 right-0 left-0 z-10 p-4 md:static md:p-0 text-center'>
         {isLoading ? (
-          <Button className={cn(buttonTheme, "w-full gap-2")} onClick={stop}>
+          <Button
+            className={cn(buttonTheme, "w-full gap-2")}
+            onClick={(e) => {
+              e.preventDefault()
+              e.stopPropagation()
+              stop()
+            }}
+            type='button'
+          >
             <FaStop />
             Stop generating
           </Button>
@@ -184,14 +193,10 @@ function GenerateForm({
             className={cn(buttonTheme, "w-full gap-2")}
             disabled={isLoading}
           >
-            {generationsCount > 2 ? (
-              "Upgrade to Pro"
-            ) : (
-              <>
-                <Sparkles />
-                Generate Cover letter
-              </>
-            )}
+            <>
+              <Sparkles />
+              Generate Cover letter
+            </>
           </Button>
         ) : (
           <Button type='button' className={cn(buttonTheme, "w-full gap-2")}>

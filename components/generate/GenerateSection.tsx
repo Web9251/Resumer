@@ -30,20 +30,27 @@ function GenerateSection({
     api: "/api/cover-letter",
     streamProtocol: "text",
     onError: (err) => {
-      console.log("🚀 ~ GeneratePage ~ err:", err)
-      toast.error("Something went wrong, Please try again.")
+      if (err.message.includes("aborted")) return
+      toast.error("Something went wrong. Please try again.")
     },
   })
   const router = useRouter()
+
   const generateHandler = async (formData: FormFields) => {
-    if (generationsCount > 2) {
-      throw new Error(
-        `You've reached your free limit, upgrade your plan to generate more.`,
+    if (generationsCount >= 2) {
+      toast.error(
+        "You've reached your free limit, upgrade your plan to generate more.",
       )
+      return
     }
     if (!formData.resume.trim() || !formData.jobDescription.trim()) return
+
     setFormData(formData)
-    await complete(JSON.stringify(""), { body: { ...formData, resumeId } })
+
+    await complete("", {
+      body: { ...formData, resumeId },
+    })
+
     router.refresh()
   }
 
@@ -52,7 +59,6 @@ function GenerateSection({
       <GenerateForm
         isLoading={isLoading}
         completion={completion}
-        stop={stop}
         resumes={resumes}
         resumeId={resumeId}
         setResumeId={setResumeId}
@@ -60,6 +66,7 @@ function GenerateSection({
         resume={resume}
         generation={generation}
         generationsCount={generationsCount}
+        stop={stop}
       />
       <CoverLetter
         isLoading={isLoading}
