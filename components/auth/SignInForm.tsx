@@ -8,6 +8,8 @@ function SignInForm({ callbackUrl }: { callbackUrl: string | undefined }) {
       headerTitle='Welcome to Resumer'
       headerSubText='Sign in to continue'
       callbackUrl={callbackUrl}
+      footerLink='/'
+      footerLinkLabel='Back to home'
     />
   )
 }
