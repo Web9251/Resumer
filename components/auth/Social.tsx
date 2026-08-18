@@ -9,13 +9,13 @@ function Social({ callbackUrl }: { callbackUrl: string | undefined }) {
   const googleSignIn = async () => {
     await authClient.signIn.social({
       provider: "google",
-      callbackURL: callbackUrl,
+      callbackURL: callbackUrl || "/generate",
     })
   }
   const githubSignIn = async () => {
     await authClient.signIn.social({
       provider: "github",
-      callbackURL: callbackUrl,
+      callbackURL: callbackUrl || "/generate",
     })
   }
 
