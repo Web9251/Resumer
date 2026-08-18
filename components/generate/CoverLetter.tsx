@@ -28,7 +28,7 @@ function CoverLetter({
     <Card
       className={cn(
         "bg-background px-3 min-h-120",
-        isLoading || completion ? "space-y-10" : "space-y-50",
+        isLoading || completion ? "space-y-10 mb-10" : "space-y-50",
       )}
     >
       <CardHeader>
